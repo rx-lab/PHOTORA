@@ -411,8 +411,7 @@ animation-range: entry 0% cover 40%;
 }
 
 .arrows i:hover{
-    border: 1px solid var(--text);
-    border-radius: 50%;
+    border: 2px solid var(--text);
     padding: 3px;
 }
 

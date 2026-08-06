@@ -1,0 +1,650 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bgcolor:#0d0d0d;
+    --text:#ffffff;
+    --border:rgb(74, 74, 74);
+}
+
+body{
+background-color: var(--bgcolor);
+font-family: "mont";
+}
+
+hr{
+    width: 1px;
+    border: none;
+    background-color: var(--border);
+}
+
+@font-face {
+    font-family: "mont";
+    src: url(fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "sign";
+    src: url(fonts/MonsieurLaDoulaise-Regular.ttf);
+}
+
+nav{
+    position: sticky;
+    z-index: 3;
+    top: 0;
+}
+.mobile-list{
+    display: none;
+}
+nav ul{
+    display: flex;
+justify-content: space-between;
+margin: 0 auto;
+background-color:transparent;
+backdrop-filter: blur(8px);
+align-items: center;
+padding: 20px;
+}
+
+.nav-links{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    list-style: none;
+    font-weight: 400;
+}
+
+.nav-links li a:hover{
+    font-weight: 300;
+}
+
+
+nav ul li a{
+    text-decoration: none;
+    color: var(--text);
+    font-family: "mont";
+    display: flex;
+}
+
+nav ul li{
+    position: relative;
+}
+
+nav ul li::before{
+    content: "";
+    position: absolute;
+
+    left: 50%;
+    bottom: -8px;
+
+    transform: translateX(-50%);
+
+    width: 0;
+    height: 2px;
+
+    background: var(--text);
+
+    transition: .3s;
+}
+nav ul li:hover::before{
+    width: 100%;
+}
+
+.logo{
+    color: var(--text);
+    font-weight: bolder;
+}
+
+.nav-icons{
+    color: var(--text);
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+    list-style: none;
+}
+
+.hero{
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+    background:
+    linear-gradient(to right, rgba(0,0,0,.7), rgba(0,0,0,.3)),
+        url("img/about.jpg");
+}
+
+
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    bottom: 50%;
+    left: 20px;
+}
+
+.content span{
+    font-weight: 200;
+    color: var(--text);
+    font-size: 15px;
+}
+
+.content h1{
+font-size: clamp(50px, 25px, 10px);
+color: var(--text);
+width: 400px;
+word-spacing: 10px;
+font-weight: 200;
+}
+
+.content a{
+    text-decoration: none;
+    border: 1px solid var(--text);
+    padding: 5px 8px;
+    color: var(--text);
+    background-color: var(--bgcolor);
+margin-right: auto;
+}
+
+.selected-works{
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+    padding: 20px;
+    border-bottom:1px solid var(--border);
+}
+
+h2{
+    font-weight:400;
+    font-size: 20px;
+    color: var(--text);
+    text-align: center;
+}
+
+.selected-img{
+    display: flex;
+    margin: 50px auto;
+    width: 90%;
+    justify-content: space-between;
+    animation: appear linear;
+animation-timeline: view();
+animation-range: entry 0% cover 40%;
+}
+
+.selected-img img{
+    width: 270px;
+    height: auto;
+      border: 2px solid transparent;
+      transition: 0.3s ease;
+}
+
+
+.selected-works a{
+    text-decoration: none;
+    border: 1px solid var(--text);
+    margin: 30px auto;
+    padding: 5px 8px;
+    color: var(--text);
+    background-color: var(--bgcolor);
+}
+
+.selected-img img:hover{
+    border: 2px solid var(--text);
+     transform: scale(1.2);
+}
+
+.what-i-do{
+        display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+    padding: 20px;
+}
+
+.what-i-do h2{
+    text-align: center;
+    border: none;
+}
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin:50px auto;
+    width: 90%;
+    animation: appear linear;
+animation-timeline: view();
+animation-range: entry 0% cover 40%;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    color: var(--text);
+    text-align: center;
+}
+
+.card p{
+    width: 200px;
+}
+
+.cards i{
+font-size: 50px;
+margin-bottom: 20px;
+}
+
+.about-me{
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+border-bottom: 1px solid var(--border);
+border-top: 1px solid var(--border);
+    background:
+        linear-gradient(to right, rgba(0,0,0,.6), rgba(0,0,0,.6)),
+        url("img/ChatGPT\ Image\ Jul\ 12\,\ 2026\,\ 06_29_29\ PM.webp");
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+}
+
+.about-me-content{
+position: absolute;
+text-align: center;
+color: var(--text);
+display: flex;
+flex-direction: column;
+animation: appear linear;
+animation-timeline: view();
+animation-range: entry 0% cover 40%;
+
+}
+
+@keyframes appear{
+    from{
+        opacity: 0;
+        scale: 0.5;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+.about-me h2{
+    margin:0 0 30px 0;
+    border: none;
+    padding: 0;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.about-me p{
+    margin:20px auto;
+    line-height: 30px;
+    width: 90%;
+}
+
+.about-me span{
+    margin: 20px 0 0 0;
+    font-family:"sign";
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.about-me a{
+    text-decoration: none;
+    border: 1px solid var(--text);
+    padding: 5px 8px;
+    width: fit-content;
+margin: 20px auto;
+    color: var(--text);
+    background-color: var(--bgcolor);
+}
+.clients-say{
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    padding: 20px;
+    border-bottom:1px solid var(--border);
+}
+
+.clients-say h2{
+    text-align: center;
+    border: none;
+    padding: none;
+}
+
+.box{
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:fit-content;
+    padding: 20px;
+    margin: 20px auto;
+    animation: move linear;
+animation-timeline: view();
+animation-range: entry 0% cover 40%;
+}
+
+@keyframes move{
+    from{
+        opacity: 0;
+        transform: translateX(300px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.box i{
+    color: var(--text);
+    padding: 10px 0 20px 0;
+    font-size: 60px;
+}
+
+.box p{
+    text-align: center;
+    color: var(--text);
+    width: 900px;
+}
+
+.box span{
+    text-align: center;
+    color: var(--text);
+}
+
+.client{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.client img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.inputs{
+    display: flex;
+    gap: 5px;
+}
+
+.arrows{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.arrows button{
+    background-color: transparent;
+    border: none;
+}
+
+.arrows i{
+    color: var(--text);
+    font-size: 20px;
+        border: 1px solid transparent;
+    border-radius: 50%;
+    padding: 3px;
+}
+
+.arrows i:hover{
+    border: 1px solid var(--text);
+    border-radius: 50%;
+    padding: 3px;
+}
+
+
+
+.get-in-touch{
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    background:
+    linear-gradient(to right, rgba(0,0,0,.5), rgba(0,0,0,.7)),
+        url("img/get\ in\ touch.jpg");
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s ease;
+
+}
+
+
+.get-in-touch-content{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    animation: appear linear;
+animation-timeline: view();
+animation-range: entry 0% cover 40%;
+
+}
+
+.get-in-touch h2{
+    padding: 0;
+    border: none;
+    color: rgb(29, 29, 29);
+    margin: 0 auto;
+    font-size: clamp(60px, 40px, 20px);
+}
+.get-in-touch h3{
+    color: var(--text);
+    font-size: clamp(70px, 40px, 20px);
+}
+
+.get-in-touch a{
+    text-decoration: none;
+    color: var(--text);
+    border: 1px solid var(--text);
+    padding: 10px 25px;
+    background-color: var(--bgcolor);
+margin: 0 auto;
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+}
+
+.col1, .col2, .col3{
+    display: flex;
+    flex-direction: column;
+}
+
+.col1 h1{
+color: var(--text);
+}
+
+.col1 p{
+    color:gray;
+    margin-top: 30px;
+    width: 350px;
+}
+
+.col2 li{
+    list-style: none;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.col2 a{
+    text-decoration: none;
+    color: gray;
+gap: 10px;
+transition: 0.3s ease;
+}
+
+.col2 a:hover{
+    color: var(--text);
+}
+
+.col3{
+    color: gray;
+    
+}
+
+.col3 i{
+    transition: 0.3s ease;
+}
+
+.col3 i:hover{
+    color: var(--text);
+}
+
+.col3 span{
+    margin-top: 30px;
+
+}
+.footer-icons{
+    display: flex;
+    gap: 10px;
+    margin-top: 50px;
+    font-size: 25px;
+    justify-content: space-around;
+
+}
+
+.footer-icons li{
+    list-style: none;
+}
+
+.footer-icons a{
+    color:gray;
+}
+
+.end{
+    border-top: 1px solid var(--border);
+}
+
+.end h3{
+    text-align: center;
+    font-weight: 300;
+        color: gray;
+        padding: 20px;
+}
+
+@media(max-width:1100px){
+
+nav{
+    position: sticky;
+    backdrop-filter: blur(8px);
+}
+
+    .nav-links{
+        flex-direction: column;
+        position: absolute;
+        left: -100%;
+        top: 0px;
+        width: 50%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        background: var(--bgcolor);
+        transition: 0.5s ease;
+
+
+    }
+
+    .nav-icons{
+        gap: 15px;
+    }
+
+    body.no-scroll{
+    overflow: hidden;
+}
+
+    .nav-links li{
+        margin-top: 20px;
+
+    }
+
+    .mobile-list{
+        display: block;
+
+    }
+
+    .nav-links.active{
+        left: 0;
+    }
+
+    .mobile-list button{
+        font-size: 30px;
+        background: transparent;
+        color: var(--text);
+        border: none;
+        cursor: pointer;
+        z-index: 2;
+        position: relative;
+    }
+
+    .selected-img{
+flex-direction: column;
+align-items: center;
+gap: 20px;
+    }
+
+    .cards{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    footer{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .col1 h1,p{
+        text-align: center;
+    }
+
+    .col1{
+        margin-bottom: 50px;
+    }
+
+    .col2{
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .col3{
+        text-align: center;
+        margin-top:80px;    
+    }
+
+    .box {
+        width: 80%;
+    }
+
+    .box p{
+        width:200px ;
+    }
+
+}

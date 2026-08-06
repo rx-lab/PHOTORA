@@ -138,7 +138,7 @@ nav ul li:hover::before{
 .content h1{
 font-size: clamp(50px, 25px, 10px);
 color: var(--text);
-width: 400px;
+width: 200px;
 word-spacing: 10px;
 font-weight: 200;
 }

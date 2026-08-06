@@ -342,7 +342,7 @@ animation-range: entry 0% cover 40%;
 @keyframes move{
     from{
         opacity: 0;
-        transform: translateX(300px);
+        transform: translateX(100px);
     }
 
     to{
@@ -646,5 +646,7 @@ gap: 20px;
     .box p{
         width:200px ;
     }
+
+    
 
 }

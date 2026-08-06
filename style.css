@@ -269,6 +269,8 @@ animation-range: entry 0% cover 40%;
 
 }
 
+
+
 @keyframes appear{
     from{
         opacity: 0;
@@ -334,7 +336,7 @@ margin: 20px auto;
     width:fit-content;
     padding: 20px;
     margin: 20px auto;
-    animation: move linear;
+    animation: appear linear;
 animation-timeline: view();
 animation-range: entry 0% cover 40%;
 }
@@ -448,7 +450,7 @@ animation-range: entry 0% cover 40%;
 .get-in-touch h2{
     padding: 0;
     border: none;
-    color: rgb(29, 29, 29);
+    color: rgb(114, 114, 114);
     margin: 0 auto;
     font-size: clamp(60px, 40px, 20px);
 }
@@ -646,7 +648,8 @@ gap: 20px;
     .box p{
         width:200px ;
     }
-
-    
+.about-me-content h3{
+    padding : 20px;
+}
 
 }

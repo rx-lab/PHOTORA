@@ -342,7 +342,7 @@ animation-range: entry 0% cover 40%;
 @keyframes move{
     from{
         opacity: 0;
-        transform: translateX(100px);
+        transform: translateX(40px);
     }
 
     to{
@@ -561,7 +561,7 @@ nav{
         position: absolute;
         left: -100%;
         top: 0px;
-        width: 50%;
+        width: 80%;
         height: 100vh;
         justify-content: center;
         align-items: center;
